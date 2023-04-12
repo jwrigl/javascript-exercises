@@ -7,6 +7,12 @@ const sumAll = function(start,end) {
         return 'ERROR';
     }
 
+    if (start > end) {
+        end = end + start;
+        start = end - start;
+        end = end - start;
+    }
+
 
     let sum = 0;
     for (let i = start; i <= end; i++) {
@@ -18,3 +24,5 @@ const sumAll = function(start,end) {
 
 // Do not edit below this line
 module.exports = sumAll;
+
+//become ungovernable
