@@ -1,15 +1,15 @@
 const palindromes = function (string) {
+    // replace any non-alphanumerics with nothing
+    string = string.replace(/[^\w]/g, "");
+    // split the string into an array
     let stringArray = string.split("");
-    console.log(stringArray);
+    //reverse the array
     stringArray = stringArray.reverse();
-    console.log(stringArray);
+    //convert array back to string
     reversedString = stringArray.reduce((accumulator, currentValue, currentIndex) => {
-        return accumulator + (currentValue.includes(" ",",",".","!") ? "" : currentValue);
+        return accumulator + currentValue;
     }, "");
-    console.log(reversedString);
-    return string === reversedString; 
+    return string.toLowerCase() === reversedString.toLowerCase(); 
 };
-
-palindromes('Animal loots foliated detail of stool lamina.')
 // Do not edit below this line
 module.exports = palindromes;
