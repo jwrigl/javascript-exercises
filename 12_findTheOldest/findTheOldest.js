@@ -5,13 +5,17 @@ const findTheOldest = function(people) {
 
     for (let i = 0; i < people.length; i++) {
         let age = people[i].yearOfDeath - people[i].yearOfBirth;
+        if (people[i].yearOfDeath===undefined) {
+            console.log("ran")
+            age = currentYear - people[i].yearOfBirth;
+        }
         if (age > oldestAge) {
             oldestAge = age;
+            console.log(oldestAge)
             oldestIndex = i
-
         }  
     }
-    console.log(oldestPerson)
+    console.log(oldestIndex)
     return people[oldestIndex];
 
      };
